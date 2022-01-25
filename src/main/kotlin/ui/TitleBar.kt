@@ -31,20 +31,20 @@ fun TitleBar(window: FrameWindowScope, modifier: Modifier) {
     window.WindowDraggableArea(modifier.padding(5.dp)) {
         Row (Modifier.wrapContentWidth().height(24.dp).background(Color(0xBB333333))) {
             Text(
-                text = "APNG制作",
+                text = "Game767",
                 fontSize = TextUnit(10f, TextUnitType.Sp),
                 color = Color.LightGray,
                 modifier = Modifier.align(Alignment.CenterVertically).padding(horizontal = 5.dp)
             )
-            Button(AppTheme.icons.minimize) { window.window.isMinimized = true }
-            Button(AppTheme.icons.close) { exitProcess(0) }
+            WindowButton(AppTheme.icons.minimize) { window.window.isMinimized = true }
+            WindowButton(AppTheme.icons.close) { exitProcess(0) }
         }
     }
 }
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-private fun Button(icon: ImageVector, onClick: () -> Unit) {
+private fun WindowButton(icon: ImageVector, onClick: () -> Unit) {
     var hover by remember { mutableStateOf(false) }
     Box (
         modifier = Modifier.width(30.dp).fillMaxHeight()

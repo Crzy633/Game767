@@ -16,7 +16,9 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import androidx.compose.ui.zIndex
+import ui.Login
 import ui.TitleBar
+import ui.widget.Alert
 
 @Composable
 @Preview
@@ -25,7 +27,9 @@ fun App(window: FrameWindowScope) {
         Surface (color = Color(0x80ffffff), shape = RoundedCornerShape(2.dp)) {
             Box (Modifier.fillMaxSize()) {
                 TitleBar(window, Modifier.align(Alignment.TopEnd).zIndex(999f))
+                Login(Modifier.align(Alignment.Center))
             }
+            Alert.Stub()
         }
     }
 }
