@@ -22,7 +22,7 @@ import ui.widget.Alert
 @Preview
 fun App(window: FrameWindowScope) {
     MaterialTheme {
-        Surface (color = Color(0x80ffffff), shape = RoundedCornerShape(2.dp)) {
+        Surface (color = Color(0xDDDDDDDD), shape = RoundedCornerShape(2.dp)) {
             Box (Modifier.fillMaxSize()) {
                 TitleBar(window, Modifier.align(Alignment.TopEnd).zIndex(999f))
                 Login(Modifier.align(Alignment.Center))
