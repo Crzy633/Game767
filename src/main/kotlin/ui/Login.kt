@@ -36,7 +36,7 @@ fun Login(modifier: Modifier) {
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 enabled = UserManager.login.value == 0
             ) {
-                Text(if(UserManager.login.value == 0) "登录" else "登陆中")
+                Text(if(UserManager.login.value == 0) "登录" else "登录中")
             }
         }
     }

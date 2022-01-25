@@ -11,11 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.FrameWindowScope
-import androidx.compose.ui.window.Window
-import androidx.compose.ui.window.application
-import androidx.compose.ui.window.rememberWindowState
+import androidx.compose.ui.window.*
 import androidx.compose.ui.zIndex
+import game.GameCanvas
 import ui.Login
 import ui.TitleBar
 import ui.widget.Alert
@@ -28,6 +26,7 @@ fun App(window: FrameWindowScope) {
             Box (Modifier.fillMaxSize()) {
                 TitleBar(window, Modifier.align(Alignment.TopEnd).zIndex(999f))
                 Login(Modifier.align(Alignment.Center))
+                GameCanvas()
             }
             Alert.Stub()
         }
@@ -36,7 +35,7 @@ fun App(window: FrameWindowScope) {
 
 fun main() = application {
     Window(
-        state = rememberWindowState(size = DpSize(800.dp, 640.dp)),
+        state = rememberWindowState(size = DpSize(800.dp, 640.dp), position = WindowPosition(Alignment.CenterStart)),
         undecorated = true,
         transparent = true,
         resizable = false,
